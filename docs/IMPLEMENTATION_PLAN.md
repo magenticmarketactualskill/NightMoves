@@ -13,16 +13,16 @@ NightMoves is a dual-sided marketplace connecting software developers with enter
 
 ### Technology Stack
 
-- **Framework:** Ruby on Rails 7.x
-- **Database:** PostgreSQL
+- **Framework:** Ruby on Rails 8.x
+- **Database:** Sqlite
 - **Authentication:** Devise with role-based access
 - **Authorization:** Pundit
 - **Admin Panel:** ActiveAdmin or custom admin namespace
 - **Background Jobs:** Sidekiq with Redis
 - **Payments:** Stripe Connect (for marketplace payouts)
-- **Search:** Elasticsearch or PostgreSQL full-text search
+- **Search:** Elasticsearch for full-text search
 - **File Storage:** Active Storage with S3
-- **Frontend:** Hotwire (Turbo + Stimulus) or React/Inertia.js
+- **Frontend:** Hotwire (Turbo + Stimulus)
 
 ### Application Structure
 
