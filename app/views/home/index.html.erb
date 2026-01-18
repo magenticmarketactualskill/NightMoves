@@ -1,0 +1,130 @@
+<!-- Hero Section -->
+<div class="relative isolate overflow-hidden">
+  <div class="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-40">
+    <div class="px-6 lg:px-0 lg:pt-4">
+      <div class="mx-auto max-w-2xl">
+        <div class="max-w-lg">
+          <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            The Marketplace for
+            <span class="text-indigo-600">Quality Software</span>
+          </h1>
+          <p class="mt-6 text-lg leading-8 text-gray-600">
+            NightMoves connects software developers with enterprises. Publish your components, reach thousands of developers, and monetize your work.
+          </p>
+          <div class="mt-10 flex items-center gap-x-6">
+            <%= link_to new_user_registration_path(role: :developer), class: "rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" do %>
+              Start Publishing
+            <% end %>
+            <%= link_to components_path, class: "text-sm font-semibold leading-6 text-gray-900" do %>
+              Browse Components <span aria-hidden="true">→</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-20 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
+      <div class="shadow-lg md:rounded-3xl">
+        <div class="bg-indigo-500 [clip-path:inset(0)] md:[clip-path:inset(0_round_theme(borderRadius.3xl))]">
+          <div class="relative px-6 pt-8 sm:pt-16 md:pl-16 md:pr-0">
+            <div class="mx-auto max-w-2xl md:mx-0 md:max-w-none">
+              <div class="w-screen overflow-hidden rounded-tl-xl bg-gray-900">
+                <div class="flex bg-gray-800/40 ring-1 ring-white/5">
+                  <div class="-mb-px flex text-sm font-medium leading-6 text-gray-400">
+                    <div class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">component.rb</div>
+                    <div class="border-r border-gray-600/10 px-4 py-2">version.rb</div>
+                  </div>
+                </div>
+                <div class="px-6 pb-14 pt-6">
+                  <pre class="text-sm leading-6 text-gray-300"><code><span class="text-pink-400">class</span> <span class="text-green-400">MyAwesomeGem</span>
+  <span class="text-pink-400">def</span> <span class="text-blue-400">initialize</span>(options = {})
+    @config = options
+  <span class="text-pink-400">end</span>
+
+  <span class="text-pink-400">def</span> <span class="text-blue-400">perform</span>
+    <span class="text-gray-500"># Your amazing code here</span>
+    puts <span class="text-yellow-400">"Hello from NightMoves!"</span>
+  <span class="text-pink-400">end</span>
+<span class="text-pink-400">end</span></code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-600">Everything you need</h2>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Built for developers, by developers
+      </p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Publish, monetize, and distribute your software components with ease.
+      </p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+            <svg class="h-5 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clip-rule="evenodd" />
+            </svg>
+            Easy Publishing
+          </dt>
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+            <p class="flex-auto">Upload your gems and packages with our simple CLI or web interface. Version management included.</p>
+          </dd>
+        </div>
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+            <svg class="h-5 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M1 4a1 1 0 011-1h16a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V4zm12 4a3 3 0 11-6 0 3 3 0 016 0zM4 9a1 1 0 100-2 1 1 0 000 2zm13-1a1 1 0 11-2 0 1 1 0 012 0zM1.75 14.5a.75.75 0 000 1.5c4.417 0 8.693.603 12.749 1.73 1.111.309 2.251-.512 2.251-1.696v-.784a.75.75 0 00-1.5 0v.784a.272.272 0 01-.35.25A49.043 49.043 0 001.75 14.5z" clip-rule="evenodd" />
+            </svg>
+            Monetize Your Work
+          </dt>
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+            <p class="flex-auto">Set your own prices for commercial licenses. Receive 85% of every sale directly to your account.</p>
+          </dd>
+        </div>
+        <div class="flex flex-col">
+          <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+            <svg class="h-5 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.25 2A2.25 2.25 0 002 4.25v2.5A2.25 2.25 0 004.25 9h2.5A2.25 2.25 0 009 6.75v-2.5A2.25 2.25 0 006.75 2h-2.5zm0 9A2.25 2.25 0 002 13.25v2.5A2.25 2.25 0 004.25 18h2.5A2.25 2.25 0 009 15.75v-2.5A2.25 2.25 0 006.75 11h-2.5zm9-9A2.25 2.25 0 0011 4.25v2.5A2.25 2.25 0 0013.25 9h2.5A2.25 2.25 0 0018 6.75v-2.5A2.25 2.25 0 0015.75 2h-2.5zm0 9A2.25 2.25 0 0011 13.25v2.5A2.25 2.25 0 0013.25 18h2.5A2.25 2.25 0 0018 15.75v-2.5A2.25 2.25 0 0015.75 11h-2.5z" clip-rule="evenodd" />
+            </svg>
+            Enterprise Ready
+          </dt>
+          <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+            <p class="flex-auto">Commercial licensing, team management, and compliance tools for enterprises of all sizes.</p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<div class="bg-indigo-600">
+  <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Ready to get started?
+      </h2>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-200">
+        Join thousands of developers publishing quality software on NightMoves.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <%= link_to new_user_registration_path, class: "rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" do %>
+          Create Free Account
+        <% end %>
+        <%= link_to pricing_path, class: "text-sm font-semibold leading-6 text-white" do %>
+          View Pricing <span aria-hidden="true">→</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

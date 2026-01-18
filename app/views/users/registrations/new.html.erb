@@ -1,0 +1,85 @@
+<div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+      Create your account
+    </h2>
+    <p class="mt-2 text-center text-sm text-gray-600">
+      Already have an account?
+      <%= link_to "Sign in", new_user_session_path, class: "font-semibold text-indigo-600 hover:text-indigo-500" %>
+    </p>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-6" }) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
+
+        <!-- Role Selection -->
+        <div>
+          <label class="block text-sm font-medium leading-6 text-gray-900 mb-3">I am a...</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none" data-controller="radio-card">
+              <%= f.radio_button :role, "developer", class: "sr-only", checked: params[:role] == "developer" || resource.developer?, data: { radio_card_target: "input", action: "change->radio-card#update" } %>
+              <span class="flex flex-1">
+                <span class="flex flex-col">
+                  <span class="block text-sm font-medium text-gray-900" data-radio-card-target="label">Developer</span>
+                  <span class="mt-1 flex items-center text-sm text-gray-500">Publish & monetize</span>
+                </span>
+              </span>
+              <svg class="h-5 w-5 text-indigo-600 hidden" data-radio-card-target="check" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+              </svg>
+              <span class="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent" data-radio-card-target="border"></span>
+            </label>
+            <label class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none" data-controller="radio-card">
+              <%= f.radio_button :role, "enterprise", class: "sr-only", checked: params[:role] == "enterprise" || resource.enterprise?, data: { radio_card_target: "input", action: "change->radio-card#update" } %>
+              <span class="flex flex-1">
+                <span class="flex flex-col">
+                  <span class="block text-sm font-medium text-gray-900" data-radio-card-target="label">Enterprise</span>
+                  <span class="mt-1 flex items-center text-sm text-gray-500">License & manage</span>
+                </span>
+              </span>
+              <svg class="h-5 w-5 text-indigo-600 hidden" data-radio-card-target="check" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+              </svg>
+              <span class="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent" data-radio-card-target="border"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <%= f.label :first_name, class: "block text-sm font-medium leading-6 text-gray-900" %>
+            <%= f.text_field :first_name, required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+          </div>
+          <div>
+            <%= f.label :last_name, class: "block text-sm font-medium leading-6 text-gray-900" %>
+            <%= f.text_field :last_name, required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+          </div>
+        </div>
+
+        <div>
+          <%= f.label :email, class: "block text-sm font-medium leading-6 text-gray-900" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+        </div>
+
+        <div>
+          <%= f.label :password, class: "block text-sm font-medium leading-6 text-gray-900" %>
+          <% if @minimum_password_length %>
+            <span class="text-xs text-gray-500">(<%= @minimum_password_length %> characters minimum)</span>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+        </div>
+
+        <div>
+          <%= f.label :password_confirmation, class: "block text-sm font-medium leading-6 text-gray-900" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+        </div>
+
+        <div>
+          <%= f.submit "Create account", class: "flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
